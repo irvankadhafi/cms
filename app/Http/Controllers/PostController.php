@@ -59,7 +59,8 @@ class PostController extends Controller
             'category_id' =>  $request->category_id,
             'body' =>  $request->body,
             'gambar' => 'public/uploads/posts/'.$new_gambar,
-            'slug' => Str::slug($request->judul),
+//            'slug' => Str::slug($request->judul),
+            'slug' => $this->createSlug($request->judul),
             'users_id' => Auth::id()
         ]);
 
@@ -68,7 +69,31 @@ class PostController extends Controller
         $gambar->move('public/uploads/posts/', $new_gambar);
         return redirect()->back()->with('success','Postingan anda berhasil disimpan');
     }
+    public function createSlug($title, $id = 0)
+    {
+        $slug = Str::slug($title);
+        $allSlugs = $this->getRelatedSlugs($slug, $id);
+        if (! $allSlugs->contains('slug', $slug)){
+            return $slug;
+        }
 
+        $i = 1;
+        $is_contain = true;
+        do {
+            $newSlug = $slug . '-' . $i;
+            if (!$allSlugs->contains('slug', $newSlug)) {
+                $is_contain = false;
+                return $newSlug;
+            }
+            $i++;
+        } while ($is_contain);
+    }
+    protected function getRelatedSlugs($slug, $id = 0)
+    {
+        return Posts::select('slug')->where('slug', 'like', $slug.'%')
+            ->where('id', '<>', $id)
+            ->get();
+    }
     /**
      * Display the specified resource.
      *

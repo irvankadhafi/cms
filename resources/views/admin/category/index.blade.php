@@ -5,7 +5,7 @@
     @if(Session::has('success'))
   	<div class="alert alert-success" role="alert">
       {{ Session('success') }}
-	</div> 
+	</div>
 	@endif
 
 	<a href="{{ route('category.create') }}" class="btn btn-info btn-sm">Tambah Kategori</a>
@@ -23,14 +23,17 @@
 			@foreach ($category as $result => $hasil)
 			<tr>
 				<td>{{ $result + $category->firstitem() }}</td>
+{{--                <td>{{ $hasil->id }}</td>--}}
 				<td>{{ $hasil->name }}</td>
 				<td>
-					<form action="{{ route('category.destroy', $hasil->id )}}" method="POST">
-						@csrf
-						@method('delete')
-					<a href="{{ route('category.edit', $hasil->id ) }}" class="btn btn-primary btn-sm">Edit</a>
-					<button type="submit" class="btn btn-danger btn-sm">Delete</button>
-					</form>
+                    @if ($hasil->id != 1)
+                        <form action="{{ route('category.destroy', $hasil->id )}}" method="POST">
+                            @csrf
+                            @method('delete')
+                        <a href="{{ route('category.edit', $hasil->id ) }}" class="btn btn-primary btn-sm">Edit</a>
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    @endif
 				</td>
 			</tr>
 			@endforeach

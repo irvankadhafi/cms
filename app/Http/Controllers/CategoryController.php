@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Posts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -108,7 +109,7 @@ class CategoryController extends Controller
     {
         $category = Category::findorfail($id);
         $category->delete();
-
+        Posts::whereCategoryId($id)->update(['category_id' => 1]);
         return redirect()->back()->with('success','Data Berhasil Dihapus');
     }
 }

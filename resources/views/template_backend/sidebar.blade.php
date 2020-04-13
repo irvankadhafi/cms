@@ -9,7 +9,7 @@
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
 
-            <li class=active><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+            <li class="active"><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
 
 
             <li class="menu-header">Starter</li>
@@ -38,6 +38,7 @@
                 <li><a class="nav-link" href="{{ route('user.index') }}">List User</a></li>
               </ul>
             </li>
+              <li><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
 
 
         </aside>
