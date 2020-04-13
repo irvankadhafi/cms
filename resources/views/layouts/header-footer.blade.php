@@ -48,16 +48,16 @@
 
             <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="/">HOME</a></li>
                     <!-- Dropdown -->
                     <li>
-                        <a href="#" >
+                        <a href="/news" >
                             DEPARTEMENT
                         </a>
                     </li>
                     <!-- Dropdown -->
                     <li>
-                        <a href="#">
+                        <a href="/news">
                             ORMAWA
                         </a>
                     </li>
@@ -68,9 +68,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="contacts.html">ADVO CARE</a>
+                        <a href="/news">ADVO CARE</a>
                     </li>
-                    <li><a href="contacts.html">Contacts</a></li>
+                    <li><a href="/news">Contacts</a></li>
 
                     <li>
                         <button class="search">
