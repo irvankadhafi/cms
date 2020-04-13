@@ -4,7 +4,7 @@
 /* Mobile Layout: 320px */
 /* Wide Mobile Layout: 480px */
 /* =================================== */
-/*  Basic Style 
+/*  Basic Style
 /* =================================== */
 ::-moz-selection {
   /* Code for Firefox */
@@ -41,11 +41,15 @@
   /* Microsoft Edge */
   color: #777777;
   font-weight: 300; }
-
+@font-face {
+    font-family: 'Bruzh';
+    url('/fonts/Bruzh.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
 body {
   color: #828bb2;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
+    counter-reset: misicounter;
   font-weight: 300;
   line-height: 1.625em;
   position: relative; }
@@ -993,6 +997,12 @@ th {
       margin-top: 0px; } }
   .feature-area .container-fluid {
     padding-left: 50px; }
+.feature-area .container-fluid h3{
+    font-family: Bruzh;
+    color: #c59190}
+.feature-area .container-fluid h3:before{
+    content: counter(misicounter) ".\0000a0\0000a0";
+    counter-increment: misicounter;}
     @media (min-width: 1921px) {
       .feature-area .container-fluid {
         max-width: 1140px;

@@ -11,6 +11,8 @@
 |
 */
 
+use App\Home;
+
 Auth::routes();
 
 Route::get('/news', 'BlogController@index');
@@ -18,8 +20,9 @@ Route::get('/news', 'BlogController@index');
 	return view('blog.isi_post');
 });*/
 Route::get('/',function (){
-    return view('index');
-});
+    $data = Home::all();
+
+    return view('index', compact('data'));});
 Route::get('/isi-post/{slug}', 'BlogController@isi_blog')->name('blog.isi');
 
 Route::get('/list-post','BlogController@list_blog')->name('blog.list');
@@ -32,15 +35,16 @@ Route::get('/cari','BlogController@cari')->name('blog.cari');
 
 
 Route::group(['middleware' => 'auth'], function(){
-	Route::get('/home', 'HomeController@index')->name('home');
-	Route::resource('/category', 'CategoryController');
-	Route::resource('/tag', 'TagController');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('/category', 'CategoryController');
+    Route::resource('/tag', 'TagController');
 
-	Route::get('/post/tampil_hapus', 'PostController@tampil_hapus')->name('post.tampil_hapus');
-	Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');
-	Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
-	Route::resource('/post', 'PostController');
-	Route::resource('/user', 'UserController');
+    Route::get('/post/tampil_hapus', 'PostController@tampil_hapus')->name('post.tampil_hapus');
+    Route::get('/post/restore/{id}', 'PostController@restore')->name('post.restore');
+    Route::delete('/post/kill/{id}', 'PostController@kill')->name('post.kill');
+    Route::resource('/post', 'PostController');
+    Route::resource('/user', 'UserController');
+    Route::resource('/setting', 'LandingController');
 });
 
 

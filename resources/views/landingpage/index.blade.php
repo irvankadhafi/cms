@@ -82,23 +82,21 @@
     <!-- ================ End FILOSOFI LOGO BEM ================= -->
 
     <!-- ================- Start About Area ================= -->
-    @foreach($data as $deskripsi)
     <section class="about-area section-gap">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-lg-5 col-md-6 about-left">
-                    <img class="img-fluid" src="{{$deskripsi->logo1}}" alt="">
+                    <img class="img-fluid" src="img/header-img3.png" alt="">
                 </div>
                 <div class="offset-lg-1 col-lg-5 col-md-12 about-right">
                     <div>
                         <!-- ================ Start Feature Area ================= -->
-
+                        @foreach($data as $deskripsi => $hasil)
                         <section class="feature-area">
                             <div class="container-fluid">
                                 <img class="img-fluid" src="img/Asset 13.png" alt="">
                                 <p>
-                                    {!! $deskripsi->visi !!}
-{{--                                    <img class="img-fluid" src="img/Asset 18.png" alt="">  sebagai poros pergerakan yang profesional untuk Almamater, bangsa, dan negara.--}}
+                                    <img class="img-fluid" src="img/Asset 18.png" alt="">  sebagai poros pergerakan yang profesional untuk Almamater, bangsa, dan negara.
                                 </p>
                                 <img class="img-fluid" src="img/Asset 12.png" alt="">
 {{--                                <p>--}}
@@ -117,7 +115,7 @@
 {{--                                    <img class="img-fluid" src="img/Asset 23.png" alt=""> <br>--}}
 {{--                                    Memberikan fasilitas dalam kegiatan keilmuan serta minat dan bakat mahasiswa POLBAN.--}}
 {{--                                </p>--}}
-                                {!! $deskripsi->misi !!}
+                                {!! $hasil->misi !!}
                             </div>
                         </section>
                         @endforeach

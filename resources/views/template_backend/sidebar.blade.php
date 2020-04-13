@@ -38,7 +38,14 @@
                 <li><a class="nav-link" href="{{ route('user.index') }}">List User</a></li>
               </ul>
             </li>
-              <li><a class="nav-link" href="{{ route('home') }}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+              <li class="dropdown">
+                  <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-fire"></i> <span>Settings</span></a>
+                  <ul class="dropdown-menu">
+                      <li><a class="nav-link" href="{{ route('setting.index') }}">Visi & Misi</a></li>
+{{--                      <li><a class="nav-link" href="{{ route('settings.misi') }}">Misi</a></li>--}}
+                  </ul>
+              </li>
+
 
 
         </aside>

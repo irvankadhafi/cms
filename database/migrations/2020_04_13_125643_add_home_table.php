@@ -13,9 +13,11 @@ class AddHomeTable extends Migration
      */
     public function up()
     {
-        Schema::create('Home', function (Blueprint $table) {
+        Schema::create('home_landing', function (Blueprint $table) {
             $table->string('title');
             $table->text('deskripsi');
+            $table->text('visi');
+            $table->text('misi');
         });
     }
 
