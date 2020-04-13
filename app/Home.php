@@ -10,6 +10,7 @@ class Home extends Model
     protected $table="home_landing";
     protected $fillable = [
         'id',
+        'logo1',
         'title',
         'deskripsi',
         'visi',

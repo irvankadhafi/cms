@@ -1135,6 +1135,7 @@ return array(
     'Highlight\\Highlighter' => $vendorDir . '/scrivo/highlight.php/Highlight/Highlighter.php',
     'Highlight\\JsonRef' => $vendorDir . '/scrivo/highlight.php/Highlight/JsonRef.php',
     'Highlight\\Language' => $vendorDir . '/scrivo/highlight.php/Highlight/Language.php',
+    'HomeLandingTableSeeder' => $baseDir . '/database/seeds/HomeLandingTableSeeder.php',
     'Illuminate\\Auth\\Access\\AuthorizationException' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/Access/AuthorizationException.php',
     'Illuminate\\Auth\\Access\\Gate' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/Access/Gate.php',
     'Illuminate\\Auth\\Access\\HandlesAuthorization' => $vendorDir . '/laravel/framework/src/Illuminate/Auth/Access/HandlesAuthorization.php',
